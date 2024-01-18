@@ -10,6 +10,9 @@
     <link href="{{ URL::asset('assets/plugins/datatable/css/jquery.dataTables.min.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('assets/plugins/datatable/css/responsive.dataTables.min.css') }}" rel="stylesheet">
     <link href="{{ URL::asset('assets/plugins/select2/css/select2.min.css') }}" rel="stylesheet">
+    <!---Internal  Prism css-->
+    <link href="{{ URL::asset('assets/plugins/prism/prism.css') }}" rel="stylesheet">
+
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
@@ -33,16 +36,13 @@
             <div class="col-xl-12">
                 <div class="card mg-b-20">
                     <div class="card-header pb-0">
-                        <div class="d-flex justify-content-between">
-                            <h4 class="card-title mg-b-0">Bordered Table</h4>
-                            <i class="mdi mdi-dots-horizontal text-gray"></i>
+                        <div class="col-sm-6 col-md-3">
+                            <a href="invoices/create" class="btn btn-primary-gradient btn-block">اضافة فاتورة</a>
                         </div>
-                        <p class="tx-12 tx-gray-500 mb-2">Example of Valex Bordered Table.. <a href="">Learn more</a>
-                        </p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table id="example" class="table key-buttons text-md-nowrap">
+                            <table id="example1" class="table key-buttons text-md-nowrap">
                                 <thead>
                                     <tr>
                                         <th class="border-bottom-0">#</th>
@@ -110,4 +110,14 @@
     <script src="{{ URL::asset('assets/plugins/datatable/js/responsive.bootstrap4.min.js') }}"></script>
     <!--Internal  Datatable js -->
     <script src="{{ URL::asset('assets/js/table-data.js') }}"></script>
+    <!-- Internal Select2 js-->
+    <script src="{{ URL::asset('assets/plugins/select2/js/select2.min.js') }}"></script>
+    <!-- Internal Jquery.mCustomScrollbar js-->
+    <script src="{{ URL::asset('assets/plugins/custom-scroll/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+    <!--Internal  Clipboard js-->
+    <script src="{{ URL::asset('assets/plugins/clipboard/clipboard.min.js') }}"></script>
+    <script src="{{ URL::asset('assets/plugins/clipboard/clipboard.js') }}"></script>
+    <!-- Internal Prism js-->
+    <script src="{{ URL::asset('assets/plugins/prism/prism.js') }}"></script>
+
 @endsection

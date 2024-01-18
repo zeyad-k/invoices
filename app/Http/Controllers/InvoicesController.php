@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\sections;
+
 use App\Models\invoices;
 use Illuminate\Http\Request;
 
@@ -12,8 +14,8 @@ class InvoicesController extends Controller
      */
     public function index()
     {
-        // echo '123456';
-        return view(view: 'invoices/invoices');
+        $sections = sections::all();
+        return view('invoices/invoices', compact('sections'));
     }
 
     /**
@@ -21,7 +23,8 @@ class InvoicesController extends Controller
      */
     public function create()
     {
-        //
+        $sections = sections::all();
+        return view('invoices/add_invoice', compact('sections'));
     }
 
     /**
