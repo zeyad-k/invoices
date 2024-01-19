@@ -32,7 +32,9 @@ Auth::routes(['register' => false]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('invoices', InvoicesController::class);
 Route::resource('sections', SectionsController::class);
+Route::get('/section/{id}', [InvoicesController::class, 'getProducts']);
 Route::resource('products', ProductsController::class);
+
 Route::get('/{page}', [AdminController::class, 'index']);
 
 // Route::resource('posts', PostController::class);

@@ -156,8 +156,8 @@
                         <h5 class="card-title">المرفقات</h5>
 
                         <div class="col-sm-12 col-md-12">
-                            <input type="file" name="pic" class="dropify" accept=".pdf,.jpg, .png, image/jpeg, image/png"
-                                data-height="70" />
+                            <input type="file" name="pic" class="dropify"
+                                accept=".pdf,.jpg, .png, image/jpeg, image/png" data-height="70" />
                         </div><br>
 
                         <div class="d-flex justify-content-center">
@@ -209,9 +209,9 @@
         var date = $('.fc-datepicker').datepicker({
             dateFormat: 'yy-mm-dd'
         }).val();
-
     </script>
 
+    {{-- ajax to get products name depending on section --}}
     <script>
         $(document).ready(function() {
             $('select[name="Section"]').on('change', function() {
@@ -236,7 +236,6 @@
             });
 
         });
-
     </script>
 
 
@@ -271,7 +270,6 @@
             }
 
         }
-
     </script>
 
 
