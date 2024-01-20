@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class invoices_attachemets extends Model
 {
     use HasFactory;
+    protected $guarded;
+
 }

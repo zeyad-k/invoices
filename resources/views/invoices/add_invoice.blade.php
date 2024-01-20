@@ -125,6 +125,7 @@
                                     <option value="" selected disabled>حدد نسبة الضريبة</option>
                                     <option value=" 5%">5%</option>
                                     <option value="10%">10%</option>
+                                    <option value="14%">14%</option>
                                 </select>
                             </div>
 
