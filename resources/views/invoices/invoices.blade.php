@@ -60,20 +60,27 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                        <td>Tiger Nixon</td>
-                                        <td>System Architect</td>
-                                        <td>Edinburgh</td>
-                                        <td>61</td>
-                                        <td>2011/04/25</td>
-                                        <td>$320,800</td>
-                                    </tr>
+                                    <?php $i = 0; ?>
+                                    @foreach ($invoices as $invoice)
+                                        <?php $i++; ?>
+                                        <tr>
+                                            <td>{{ $i }}</td>
+                                            <td>{{ $invoice->invoice_number }}</td>
+                                            <td>{{ $invoice->invoice_Date }}</td>
+                                            <td>{{ $invoice->Due_date }}</td>
+                                            <td>{{ $invoice->product }}</td>
+                                            <td>{{ $invoice->section ? $invoice->section->section_name : 'Section not found' }}
+                                            </td>
+                                            <td>{{ $invoice->Discount }}</td>
+                                            <td>{{ $invoice->Rate_VAT }}</td>
+                                            <td>{{ $invoice->Value_VAT }}</td>
+                                            <td>{{ $invoice->Total }}</td>
+                                            <td>{{ $invoice->Status }}</td>
+                                            <td>{{ $invoice->invoices_details ? $invoice->invoices_details->note : 'Notes not found' }}
+                                            </td>
+                                        </tr>
+                                    @endforeach
+
                                 </tbody>
                             </table>
                         </div>

@@ -18,7 +18,8 @@ class InvoicesController extends Controller
     public function index()
     {
         $sections = sections::all();
-        return view('invoices/invoices', compact('sections'));
+        $invoices = invoices::all();
+        return view('invoices/invoices', compact('sections', 'invoices'));
     }
 
     /**
