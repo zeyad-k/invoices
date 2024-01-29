@@ -36,10 +36,18 @@ return [
             'throw' => false,
         ],
 
+        'public_old' => [
+            'driver' => 'local',
+            'root' => public_path() . '/Attachments',
+            // 'throw' => false,
+        ],
+
+
+
         'public' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),
-            'url' => env('APP_URL').'/storage',
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
             'throw' => false,
         ],
@@ -71,6 +79,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('Attachments') => storage_path('app/Attachments'),
     ],
 
 ];
