@@ -4,6 +4,7 @@ use App\Http\Controllers\InvoicesAttachemetsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\InvoiceArchiveController;
 use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SectionsController;
@@ -38,6 +39,7 @@ Route::resource('invoices', InvoicesController::class);
 Route::resource('invoicesDetails', InvoicesDetailsController::class);
 
 Route::resource('invoicesAttachement', InvoicesAttachemetsController::class);
+Route::resource('InvoiceAchiveController', InvoiceArchiveController::class);
 
 Route::resource('sections', SectionsController::class);
 
@@ -51,9 +53,15 @@ Route::get('downloadAttachment/{invoice_number}/{file_name}', [InvoicesDetailsCo
 Route::post('deleteAttachment', [InvoicesDetailsController::class, 'destroy'])->name('delete_file');
 
 
+Route::get('/Print_invoice/{id}', [InvoicesController::class, 'Print_invoice']);
 Route::get('/section/{id}', [InvoicesController::class, 'getProducts']);
 Route::get('/Status_show/{id}', [InvoicesController::class, 'Status_show'])->name('Status_show');
 Route::post('/Status_Update/{id}', [InvoicesController::class, 'Status_Update'])->name('Status_Update');
+
+Route::get('/invoices_paid', [InvoicesController::class, 'invoices_paid'])->name('invoices_paid');
+Route::get('/invoices_partiallyPaid', [InvoicesController::class, 'invoices_partiallyPaid'])->name('invoices_partiallyPaid');
+Route::get('/invoices_unpaid', [InvoicesController::class, 'invoices_unpaid'])->name('invoices_unpaid');
+Route::post('/archive_invoice', [InvoicesController::class, 'archiveInvoice'])->name('archive_invoice');
 
 
 
