@@ -94,7 +94,13 @@
                     <div class="card-header pb-0">
                         <div class="col-sm-6 col-md-3">
                             <a href="invoices/create" class="btn btn-primary-gradient btn-block">اضافة فاتورة</a>
+                            <a href="{{ route('invoices_export') }}" class="btn btn-light-gradient btn-block">طباعة
+                                الفواتير</a>
                         </div>
+                        {{-- <div class="col-sm-6 col-md-3">
+                            <a href="{{ route('invoices_export') }}" class="btn btn-light-gradient btn-block">طباعة
+                                الفواتير</a>
+                        </div> --}}
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

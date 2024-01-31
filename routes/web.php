@@ -63,7 +63,7 @@ Route::get('/invoices_partiallyPaid', [InvoicesController::class, 'invoices_part
 Route::get('/invoices_unpaid', [InvoicesController::class, 'invoices_unpaid'])->name('invoices_unpaid');
 Route::post('/archive_invoice', [InvoicesController::class, 'archiveInvoice'])->name('archive_invoice');
 
-
+Route::get('invoices_export/', [InvoicesController::class, 'export'])->name('invoices_export');
 
 // Route::get('/getProducts/{id}', [InvoicesController::class, 'getProducts']);
 // Route::get('/invoicesDetails/{id}', [InvoicesDetailsController::class, 'getDetails']);
