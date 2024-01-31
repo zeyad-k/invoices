@@ -58,7 +58,7 @@
                             جزئيا</a>
                     </li>
                     <li><a class="slide-item" href="{{ route('InvoiceAchiveController.index') }} "> أرشيف الفواتير
-                            جزئيا</a>
+                        </a>
                     </li>
 
                 </ul>

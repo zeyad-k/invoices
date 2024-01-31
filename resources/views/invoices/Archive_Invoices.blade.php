@@ -90,12 +90,15 @@
                                     @endphp
                                     <tr>
                                         <td>{{ $i }}</td>
-                                        <td>{{ $invoice->invoice_number }} </td>
+                                        <td><a href="{{ url('invoicesDetails') }}/{{ $invoice->id }}/edit">
+                                                {{-- <td><a href=" {{ route('invoicesDetails.edit', ['id' => {{ $invoice->id }}]) }}"> --}}
+                                                {{ $invoice->invoice_number }}</a>
+                                        </td>
                                         <td>{{ $invoice->invoice_Date }}</td>
                                         <td>{{ $invoice->Due_date }}</td>
                                         <td>{{ $invoice->product }}</td>
                                         <td><a
-                                                href="{{ url('InvoicesDetails') }}/{{ $invoice->id }}">{{ $invoice->section->section_name }}</a>
+                                                href="{{ url('InvoicesDetails') }}/{{ $invoice->id }}/edit">{{ $invoice->section->section_name }}</a>
                                         </td>
                                         <td>{{ $invoice->Discount }}</td>
                                         <td>{{ $invoice->Rate_VAT }}</td>

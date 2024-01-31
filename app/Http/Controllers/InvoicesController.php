@@ -3,15 +3,18 @@
 namespace App\Http\Controllers;
 
 use id;
+use App\Models\User;
 use App\Models\invoices;
 use App\Models\sections;
 use Illuminate\Http\Request;
 use App\Models\invoices_details;
+use App\Notifications\addInvoice;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use App\Models\invoices_attachemets;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Notification;
 
 class InvoicesController extends Controller
 {
@@ -102,8 +105,8 @@ class InvoicesController extends Controller
         }
 
 
-        // $user = User::first();
-        // Notification::send($user, new AddInvoice($invoice_id));
+        $user = User::first();
+        Notification::send($user, new addInvoice($invoice_id));
 
         // $user = User::get();
         // $invoices = invoices::latest()->first();
