@@ -1,14 +1,16 @@
 <?php
 
-use App\Http\Controllers\InvoicesAttachemetsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RoleController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\InvoiceArchiveController;
 use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SectionsController;
+use App\Http\Controllers\InvoiceArchiveController;
 use App\Http\Controllers\InvoicesDetailsController;
+use App\Http\Controllers\InvoicesAttachemetsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -68,6 +70,16 @@ Route::get('invoices_export/', [InvoicesController::class, 'export'])->name('inv
 // Route::get('/getProducts/{id}', [InvoicesController::class, 'getProducts']);
 // Route::get('/invoicesDetails/{id}', [InvoicesDetailsController::class, 'getDetails']);
 
+// Route::group(['middleware' => ['auth']], function () {
+//     Route::resource('roles', 'RoleController');
+//     Route::resource('users', 'UserController');
+// });
+
+Route::group(['middleware' => ['auth']], function () {
+    Route::resource('roles', RoleController::class);
+    Route::resource('users', UserController::class);
+});
+
 Route::get('/{page}', [AdminController::class, 'index']);
 
 // Route::resource('posts', PostController::class);
@@ -76,3 +88,6 @@ Route::get('/{page}', [AdminController::class, 'index']);
 // Auth::routes();
 
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+
