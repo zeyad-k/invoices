@@ -75,7 +75,7 @@ Route::get('invoices_export/', [InvoicesController::class, 'export'])->name('inv
 //     Route::resource('users', 'UserController');
 // });
 
-Route::group(['middleware' => ['auth']], function () {
+Route::group(['middleware' => ['auth',]], function () {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
 });
