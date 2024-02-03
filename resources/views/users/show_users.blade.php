@@ -80,7 +80,7 @@
                                     </td>
 
                                     <td>
-                                        @if (!empty($user->getRoleNames()))
+                                        @if ($user->getRoleNames()->count())
                                             @foreach ($user->getRoleNames() as $v)
                                                 <label class="badge badge-success">{{ $v }}</label>
                                             @endforeach
@@ -171,7 +171,6 @@
         modal.find('.modal-body #user_id').val(user_id);
         modal.find('.modal-body #username').val(username);
     })
-
 </script>
 
 
