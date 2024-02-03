@@ -16,10 +16,14 @@ class RoleController extends Controller
      */
     function __construct()
     {
-        $this->middleware('permission:role-list|role-create|role-edit|role-delete', ['only' => ['index', 'store']]);
-        $this->middleware('permission:role-create', ['only' => ['create', 'store']]);
-        $this->middleware('permission:role-edit', ['only' => ['edit', 'update']]);
-        $this->middleware('permission:role-delete', ['only' => ['destroy']]);
+        // $this->middleware('permission:role-list|role-create|role-edit|role-delete', ['only' => ['index', 'store']]);
+        // $this->middleware('permission:role-create', ['only' => ['create', 'store']]);
+        // $this->middleware('permission:role-edit', ['only' => ['edit', 'update']]);
+        // $this->middleware('permission:role-delete', ['only' => ['destroy']]);
+        $this->middleware('permission:عرض صلاحية|تعديل صلاحية|تعديل صلاحية|حذف صلاحية', ['only' => ['index', 'store']]);
+        $this->middleware('permission:اضافة صلاحية', ['only' => ['create', 'store']]);
+        $this->middleware('permission:تعديل صلاحية', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:حذف صلاحية', ['only' => ['destroy']]);
     }
 
     /**
