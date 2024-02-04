@@ -141,7 +141,6 @@
                                     <tr>
                                         <td>{{ $i }}</td>
                                         <td><a href="{{ url('invoicesDetails') }}/{{ $invoice->id }}/edit">
-                                                {{-- <td><a href=" {{ route('invoicesDetails.edit', ['id' => {{ $invoice->id }}]) }}"> --}}
                                                 {{ $invoice->invoice_number }}</a>
                                         </td>
                                         <td>{{ $invoice->invoice_Date }}</td>
