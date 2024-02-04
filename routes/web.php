@@ -9,6 +9,8 @@ use App\Http\Controllers\InvoicesController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\SectionsController;
 use App\Http\Controllers\InvoiceArchiveController;
+use App\Http\Controllers\Invoices_Report;
+use App\Http\Controllers\Customers_Report;
 use App\Http\Controllers\InvoicesDetailsController;
 use App\Http\Controllers\InvoicesAttachemetsController;
 
@@ -66,6 +68,12 @@ Route::get('/invoices_unpaid', [InvoicesController::class, 'invoices_unpaid'])->
 Route::post('/archive_invoice', [InvoicesController::class, 'archiveInvoice'])->name('archive_invoice');
 
 Route::get('invoices_export/', [InvoicesController::class, 'export'])->name('invoices_export');
+
+Route::get('invoices_report/', [Invoices_Report::class, 'index'])->name('invoices_report-index');
+Route::post('invoices_reports/', [Invoices_Report::class, 'Search_invoices'])->name('invoices_report-search');
+
+Route::get('customers_report/', [Customers_Report::class, 'index'])->name('customers_report-index');
+Route::post('customers_reports/', [Customers_Report::class, 'Search_customers'])->name('customers_report-search');
 
 // Route::get('/getProducts/{id}', [InvoicesController::class, 'getProducts']);
 // Route::get('/invoicesDetails/{id}', [InvoicesDetailsController::class, 'getDetails']);
