@@ -108,18 +108,19 @@ class InvoicesController extends Controller
 
 
         $user = User::first();
-        Notification::send($user, new addInvoice($invoice_id));
+        // Notification::send($user, new addInvoice($invoice_id));
 
         // $user = User::get();
-        // $invoices = invoices::latest()->first();
-        // Notification::send($user, new \App\Notifications\Add_invoice_new($invoices));
-
-
+        $invoices = invoices::latest()->first();
+        Notification::send($user, new \App\Notifications\AddInvoiceDatabase($invoices));
 
         // event(new MyEventClass('hello world'));
 
-        session()->flash('Add', 'تم اضافة الفاتورة بنجاح');
-        return redirect('/invoices')->with('success', 'تم  اضافة الفاتوره بنجاح');
+        session()->flash('invoice_added');
+        return redirect('/invoices');
+
+        // session()->flash('Add', 'تم اضافة الفاتورة بنجاح');
+        // return redirect('/invoices')->with('success', 'تم  اضافة الفاتوره بنجاح');
     }
 
 

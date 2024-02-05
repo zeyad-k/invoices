@@ -81,6 +81,16 @@
             }
         </script>
     @endif
+    @if (session()->has('invoice_added'))
+        <script>
+            window.onload = function() {
+                notif({
+                    msg: "تم اضافة الفاتورة بنجاح",
+                    type: "success"
+                })
+            }
+        </script>
+    @endif
 
 
     <!-- row -->
