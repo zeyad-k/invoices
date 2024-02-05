@@ -163,21 +163,9 @@
                         To begin, enter your order number.</p>
                 </div>
                 <div class="card-body">
-                    <div class="total-revenue">
-                        <div>
-                            <h4>120,750</h4>
-                            <label><span class="bg-primary"></span>success</label>
-                        </div>
-                        <div>
-                            <h4>56,108</h4>
-                            <label><span class="bg-danger"></span>Pending</label>
-                        </div>
-                        <div>
-                            <h4>32,895</h4>
-                            <label><span class="bg-warning"></span>Failed</label>
-                        </div>
+                    <div style="width:70%;">
+                        {!! $chartjs_3->render() !!}
                     </div>
-                    <div id="bar" class="sales-bar mt-4"></div>
                 </div>
             </div>
         </div>
@@ -185,8 +173,8 @@
             <div class="card card-dashboard-map-one">
                 <label class="main-content-label">Sales Revenue by Customers in USA</label>
                 <span class="d-block mg-b-20 text-muted tx-12">Sales Performance of all states in the United States</span>
-                <div class="">
-                    <div class="vmap-wrapper ht-180" id="vmap2"></div>
+                <div style="width:80%;">
+                    {!! $chartjs_2->render() !!}
                 </div>
             </div>
         </div>
@@ -195,7 +183,7 @@
 
     <!-- row opened -->
     <div class="row row-sm">
-        <div class="col-xl-4 col-md-12 col-lg-12">
+        {{-- <div class="col-xl-4 col-md-12 col-lg-12">
             <div class="card">
                 <div class="card-header pb-1">
                     <h3 class="card-title mb-2">Recent Customers</h3>
@@ -297,8 +285,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-4 col-md-12 col-lg-6">
+        </div> --}}
+        {{-- <div class="col-xl-4 col-md-12 col-lg-6">
             <div class="card">
                 <div class="card-header pb-1">
                     <h3 class="card-title mb-2">Sales Activity</h3>
@@ -341,8 +329,8 @@
                     </ul>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-4 col-md-12 col-lg-6">
+        </div> --}}
+        {{-- <div class="col-xl-4 col-md-12 col-lg-6">
             <div class="card">
                 <div class="card-header pb-0">
                     <h3 class="card-title mb-2">Recent Orders</h3>
@@ -395,13 +383,13 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     <!-- row close -->
 
     <!-- row opened -->
     <div class="row row-sm row-deck">
-        <div class="col-md-12 col-lg-4 col-xl-4">
+        {{-- <div class="col-md-12 col-lg-4 col-xl-4">
             <div class="card card-dashboard-eight pb-2">
                 <h6 class="card-title">Your Top Countries</h6><span class="d-block mg-b-10 text-muted tx-12">Sales
                     performance revenue based by country</span>
@@ -432,8 +420,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-12 col-lg-8 col-xl-8">
+        </div> --}}
+        {{-- <div class="col-md-12 col-lg-8 col-xl-8">
             <div class="card card-table-two">
                 <div class="d-flex justify-content-between">
                     <h4 class="card-title mb-1">Your Most Recent Earnings</h4>
@@ -485,7 +473,7 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     <!-- /row -->
     </div>
