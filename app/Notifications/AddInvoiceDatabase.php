@@ -59,10 +59,11 @@ class AddInvoiceDatabase extends Notification
         return [
 
             'id' => $this->invoices->id,
+            'user' => Auth::user()->name,
+
             'title' => '  تم اضافة فاتورة جديدة بواسطة : ',
             // ...
 
-            'user' => Auth::user()->name,
         ];
     }
 }

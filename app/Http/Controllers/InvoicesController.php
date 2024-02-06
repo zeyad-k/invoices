@@ -107,10 +107,11 @@ class InvoicesController extends Controller
         }
 
 
-        $user = User::first();
+        // $user = User::first();
         // Notification::send($user, new addInvoice($invoice_id));
 
-        // $user = User::get();
+        $user = User::get();
+        // $user = User::find(Auth::user()->id);
         $invoices = invoices::latest()->first();
         Notification::send($user, new \App\Notifications\AddInvoiceDatabase($invoices));
 
